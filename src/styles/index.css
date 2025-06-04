@@ -1,0 +1,6 @@
+@layer variables, base, components, utilities;
+
+@import "./colors.css" layer(variables);
+@import "./base.css" layer(base);
+/* components defined in /components/** */
+@import "./utilities.css" layer(utilities);

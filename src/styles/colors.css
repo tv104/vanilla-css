@@ -1,0 +1,155 @@
+:root {
+  /* Primitive color tokens */
+  --blue-50: #ebf4ff;
+  --blue-100: #c8e5ff;
+  --blue-200: #88c2fd;
+  --blue-400: #4da1f6;
+  --blue-600: #2679db;
+  --blue-800: #144dac;
+  --blue-900: #0e3b95;
+
+  --neutral-0: #ffffff;
+  --neutral-50: #f8f9fa;
+  --neutral-100: #e9ecef;
+  --neutral-200: #dee2e6;
+  --neutral-400: #adb5bd;
+  --neutral-600: #6c757d;
+  --neutral-800: #343a40;
+  --neutral-900: #212529;
+  --neutral-1000: #000000;
+
+  /* Semantic color declarations, required for stylelint plugin recognition */
+  --surface-primary: var(--neutral-0);
+  --surface-accent: var(--blue-50);
+  --surface-muted: var(--neutral-100);
+
+  --content-primary: var(--neutral-900);
+  --content-tertiary: var(--neutral-400);
+  --content-inverse: var(--neutral-0);
+  --content-accent: var(--blue-600);
+  --content-link: var(--blue-400);
+
+  --border-primary: var(--neutral-200);
+  --border-accent: var(--blue-400);
+  --border-focus: var(--blue-400);
+
+  --action-primary: var(--blue-400);
+  --action-primary-hover: var(--blue-600);
+  --action-primary-pressed: var(--blue-800);
+
+  --state-disabled-surface: var(--neutral-100);
+  --state-disabled-content: var(--neutral-400);
+  --state-disabled-border: var(--neutral-200);
+}
+
+/* 
+ * Semantic color properties with type safety and fallbacks
+ * Note: initial-value uses hardcoded colors (not var()) because var() references are processed at registration time when variables may not be available yet. (This is unlikely to change on a spec level for the foreseeable future)
+ */
+
+/* Surface/Background Colors */
+@property --surface-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+
+@property --surface-accent {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ebf4ff;
+}
+
+@property --surface-muted {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #e9ecef;
+}
+
+/* Content/Text Colors */
+@property --content-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #212529;
+}
+
+@property --content-tertiary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #adb5bd;
+}
+
+@property --content-inverse {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #ffffff;
+}
+
+@property --content-accent {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2679db;
+}
+
+@property --content-link {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #4da1f6;
+}
+
+/* Border Colors */
+@property --border-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #dee2e6;
+}
+
+@property --border-accent {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #4da1f6;
+}
+
+@property --border-focus {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #4da1f6;
+}
+
+/* Action/Interactive Colors */
+@property --action-primary {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #4da1f6;
+}
+
+@property --action-primary-hover {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #2679db;
+}
+
+@property --action-primary-pressed {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #144dac;
+}
+
+/* State Colors */
+@property --state-disabled-surface {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #e9ecef;
+}
+
+@property --state-disabled-content {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #adb5bd;
+}
+
+@property --state-disabled-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #dee2e6;
+}

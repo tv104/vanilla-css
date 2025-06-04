@@ -1,0 +1,47 @@
+/* Text color utilities */
+.text-primary {
+  color: var(--content-primary);
+}
+.text-tertiary {
+  color: var(--content-tertiary);
+}
+.text-inverse {
+  color: var(--content-inverse);
+}
+.text-accent {
+  color: var(--content-accent);
+}
+.text-link {
+  color: var(--content-link);
+}
+
+/* Background color utilities */
+.bg-primary {
+  background-color: var(--surface-primary);
+}
+.bg-accent {
+  background-color: var(--surface-accent);
+}
+.bg-muted {
+  background-color: var(--surface-muted);
+}
+
+/* Border color utilities */
+.border-primary {
+  border-color: var(--border-primary);
+}
+.border-accent {
+  border-color: var(--border-accent);
+}
+.border-focus {
+  border-color: var(--border-focus);
+}
+
+/* State utilities */
+[disabled],
+.disabled {
+  background-color: var(--state-disabled-surface);
+  color: var(--state-disabled-content);
+  border-color: var(--state-disabled-border);
+  cursor: not-allowed;
+}
