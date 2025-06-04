@@ -1,6 +1,6 @@
-# Modern Vanilla CSS
+# Vanilla CSS
 
-Playing around with new CSS features
+Playing around with new CSS features including `@property`, `@layer`, `@scope` and `@container`.
 
 ## Run it
 
