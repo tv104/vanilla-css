@@ -3,7 +3,7 @@
   color: var(--content-primary);
 }
 .text-tertiary {
-  color: var(--content-tertiary);
+  color: var(--content-secondary);
 }
 .text-inverse {
   color: var(--content-inverse);

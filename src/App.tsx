@@ -1,24 +1,40 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./styles/index.css";
 import { Button } from "./components/button";
 import { Card } from "./components/card";
+import { ColorSwatch } from "./components/color-swatch";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const blueColors = [
+    "--blue-50",
+    "--blue-100",
+    "--blue-200",
+    "--blue-400",
+    "--blue-600",
+    "--blue-800",
+    "--blue-900",
+  ];
+
+  const neutralColors = [
+    "--neutral-0",
+    "--neutral-50",
+    "--neutral-100",
+    "--neutral-200",
+    "--neutral-400",
+    "--neutral-600",
+    "--neutral-800",
+    "--neutral-900",
+    "--neutral-1000",
+  ];
+
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <Card title="Color Primitives">
+        <ColorSwatch title="Blue Primitives" colors={blueColors} />
+        <ColorSwatch title="Neutral Primitives" colors={neutralColors} />
+      </Card>
 
       <div>
         <Card title="Container Query Demo">

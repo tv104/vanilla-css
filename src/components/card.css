@@ -1,4 +1,4 @@
-/* @layer components ensures proper cascade order vs utilities/base styles */
+/* @layer ensures proper cascade order relative to base/utility styles */
 @layer components {
   .card-container {
     container-type: inline-size;
@@ -12,6 +12,11 @@
       border-radius: 0.5rem;
       padding: 1rem;
       box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 1rem;
       
       /* nesting */
       & .card-title {
@@ -20,6 +25,7 @@
         color: var(--content-primary);
         font-size: 1.25rem;
         font-weight: 600;
+        align-self: center;
       }
     }
 
@@ -27,11 +33,14 @@
     @container (min-width: 768px) {
       .card {
         border-radius: 1rem;
-        padding: 1.5rem;
+        padding: 2rem;
+        gap: 2rem;
+        text-align: left;
 
         & .card-title {
           font-size: 1.75rem;
           margin-bottom: 0;
+          align-self: flex-start;
         }
       }
     }

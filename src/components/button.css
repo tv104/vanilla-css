@@ -1,4 +1,4 @@
-/* @layer components ensures proper cascade order vs utilities/base styles */
+/* @layer ensures proper cascade order relative to base/utility styles */
 @layer components {
   .btn-container {
     container-type: inline-size;

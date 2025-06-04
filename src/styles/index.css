@@ -1,6 +1,7 @@
+/* explicit layer order ensures utility classes work as expected */
 @layer variables, base, components, utilities;
 
 @import "./colors.css" layer(variables);
 @import "./base.css" layer(base);
-/* components defined in /components/** */
+/* Note: components defined in /components/**.css */
 @import "./utilities.css" layer(utilities);
