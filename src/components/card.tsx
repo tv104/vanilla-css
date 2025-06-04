@@ -1,4 +1,4 @@
-import styles from "./card.module.css";
+import "./card.css";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -6,9 +6,11 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Card = ({ children, title, className, ...props }: CardProps) => {
   return (
-    <div className={`${styles.card} ${className || ""}`} {...props}>
-      {title && <h2 className="title">{title}</h2>}
-      {children}
+    <div className="card-container">
+      <div className={`card ${className || ""}`} {...props}>
+        {title && <h2 className="card-title">{title}</h2>}
+        {children}
+      </div>
     </div>
   );
 };
