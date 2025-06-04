@@ -1,7 +1,10 @@
-/* explicit layer order ensures utility classes work as expected */
+/* explicit layer order ensures utility classes work as expected
+   note that this requires all styles to be in a @layer block
+*/
 @layer variables, base, components, utilities;
 
 @import "./colors.css" layer(variables);
 @import "./base.css" layer(base);
 /* Note: components defined in /components/**.css */
 @import "./utilities.css" layer(utilities);
+

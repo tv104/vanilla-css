@@ -1,10 +1,10 @@
-/* @layer ensures proper cascade order relative to base/utility styles */
+/* @layer ensures explicit cascade order relative to base/utility styles */
 @layer components {
   .btn-container {
     container-type: inline-size;
   }
   
-  /* @scope ensures no classname collisions */
+  /* @scope ensures styles are scoped to the component */
   @scope (.btn-container) {
     .btn {
       display: inline-flex;
@@ -32,12 +32,10 @@
       &:active {
         background-color: var(--action-primary-pressed);
       }
-    }
 
-    /* adapt based on available space */
-    @container (min-width: 600px) {
-      .btn {
-        width: auto;
+      /* adapt based on available space */
+      @container (min-width: 600px) {
+          width: auto;
       }
     }
   }

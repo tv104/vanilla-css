@@ -1,10 +1,10 @@
-/* @layer ensures proper cascade order relative to base/utility styles */
+/* @layer ensures explicit cascade order relative to base/utility styles */
 @layer components {
   .card-container {
     container-type: inline-size;
   }
   
-  /* @scope ensures no classname collisions */
+  /* @scope ensures styles are scoped to the component */
   @scope (.card-container) {
     .card {
       background-color: var(--surface-primary);
