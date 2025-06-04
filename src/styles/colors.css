@@ -27,7 +27,7 @@
   --surface-muted: var(--neutral-100);
 
   --content-primary: var(--neutral-900);
-  --content-tertiary: var(--neutral-400);
+  --content-secondary: var(--neutral-600);
   --content-inverse: var(--neutral-0);
   --content-accent: var(--blue-600);
   --content-link: var(--blue-400);
@@ -76,7 +76,7 @@
   initial-value: #212529;
 }
 
-@property --content-tertiary {
+@property --content-secondary {
   syntax: "<color>";
   inherits: false;
   initial-value: #adb5bd;
