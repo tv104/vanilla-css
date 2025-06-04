@@ -1,0 +1,46 @@
+/* @layer components ensures proper cascade order vs utilities/base styles */
+@layer components {
+  .card {
+    background-color: var(--surface-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    
+    container-type: inline-size;
+    container-name: card;
+    
+    /* note we can use "generic" classnames due to CSS modules */
+    & .title {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--content-primary);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+  }
+
+  @media (min-width: 512px) {
+    .card {
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+
+      & .title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .card {
+      border-radius: 1rem;
+      padding: 1.5rem;
+
+      & .title {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

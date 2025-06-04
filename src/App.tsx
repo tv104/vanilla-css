@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./styles/index.css";
 import { Button } from "./components/button";
+import { Card } from "./components/card";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,20 +19,21 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+
       <div>
-        <Button
-          variant="primary"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
-        </Button>
-        <Button
-          variant="primary"
-          onClick={() => setCount((count) => count + 1)}
-          disabled
-        >
-          Disabled button
-        </Button>
+        <Card title="Container Query Demo">
+          <p>
+            This card component uses container queries to adapt its layout based
+            on its own size, not the viewport. Resize the window to see how the
+            title size and padding change responsively.
+          </p>
+          <Button
+            variant="primary"
+            onClick={() => setCount((count) => count + 1)}
+          >
+            count is {count}
+          </Button>
+        </Card>
       </div>
     </>
   );
