@@ -1,22 +1,25 @@
 :root {
-  /* Primitive color tokens */
-  --blue-50: #ebf4ff;
-  --blue-100: #c8e5ff;
-  --blue-200: #88c2fd;
-  --blue-400: #4da1f6;
-  --blue-600: #2679db;
-  --blue-800: #144dac;
-  --blue-900: #0e3b95;
-
-  --neutral-0: #ffffff;
-  --neutral-50: #f8f9fa;
-  --neutral-100: #e9ecef;
-  --neutral-200: #dee2e6;
-  --neutral-400: #adb5bd;
-  --neutral-600: #6c757d;
-  --neutral-800: #343a40;
-  --neutral-900: #212529;
-  --neutral-1000: #000000;
+  /* Base colors - 600 is foundation */
+  --blue-base: #2679db;     /* blue-600 */
+  --neutral-base: #6c757d;  /* neutral-600 */
+  
+  --blue-50: oklch(from var(--blue-base) calc(l + 0.45) calc(c * 0.2) h);
+  --blue-100: oklch(from var(--blue-base) calc(l + 0.35) calc(c * 0.4) h);
+  --blue-200: oklch(from var(--blue-base) calc(l + 0.2) calc(c * 0.7) h);
+  --blue-400: oklch(from var(--blue-base) calc(l + 0.1) calc(c * 0.9) h);
+  --blue-600: var(--blue-base); /* Base color */
+  --blue-800: oklch(from var(--blue-base) calc(l - 0.15) calc(c * 1.1) h);
+  --blue-900: oklch(from var(--blue-base) calc(l - 0.3) calc(c * 1.2) h);
+  
+  --neutral-0: oklch(from var(--neutral-base) 100% calc(c * 0.1) h); 
+  --neutral-50: oklch(from var(--neutral-base) calc(l + 0.4) calc(c * 0.1) h);
+  --neutral-100: oklch(from var(--neutral-base) calc(l + 0.3) calc(c * 0.2) h);
+  --neutral-200: oklch(from var(--neutral-base) calc(l + 0.2) calc(c * 0.3) h);
+  --neutral-400: oklch(from var(--neutral-base) calc(l + 0.1) calc(c * 0.7) h);
+  --neutral-600: var(--neutral-base); /* Base color */
+  --neutral-800: oklch(from var(--neutral-base) calc(l - 0.15) c h);
+  --neutral-900: oklch(from var(--neutral-base) calc(l - 0.3) calc(c * 1.1) h);
+  --neutral-1000: oklch(from var(--neutral-base) 0% calc(c * 0.2) h);
 
   /* Semantic color declarations, required for stylelint plugin recognition */
   --surface-primary: var(--neutral-0);
@@ -24,7 +27,7 @@
   --surface-muted: var(--neutral-100);
 
   --content-primary: var(--neutral-900);
-  --content-secondary: var(--neutral-600);
+  --content-tertiary: var(--neutral-400);
   --content-inverse: var(--neutral-0);
   --content-accent: var(--blue-600);
   --content-link: var(--blue-400);
