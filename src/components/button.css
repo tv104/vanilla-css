@@ -1,12 +1,11 @@
 /* @layer ensures explicit cascade order relative to base/utility styles */
 @layer components {
-  .btn-container {
-    container-type: inline-size;
-  }
-  
-  /* @scope ensures styles are scoped to the component */
+  /* @scope ensures styles are encapsulated to the component */
   @scope (.btn-container) {
-    .btn {
+    /* container-type sets the type of @container context */
+    container-type: inline-size;
+
+    button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -17,6 +16,11 @@
       cursor: pointer;
       width: 100%;
       flex: none;
+
+      /* adapt based on available space defined in the container-type */
+      @container (min-width: 600px) {
+        width: auto;
+      }
     }
 
     .btn--primary {
@@ -31,11 +35,6 @@
       
       &:active {
         background-color: var(--action-primary-pressed);
-      }
-
-      /* adapt based on available space */
-      @container (min-width: 600px) {
-          width: auto;
       }
     }
   }

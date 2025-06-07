@@ -12,7 +12,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <div className="btn-container">
-      <button className={`btn btn--${variant} ${className}`} {...props}>
+      <button className={`btn--${variant} ${className}`} {...props}>
         {children}
       </button>
     </div>

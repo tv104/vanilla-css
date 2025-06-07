@@ -1,11 +1,10 @@
 /* @layer ensures explicit cascade order relative to base/utility styles */
 @layer components {
-  .card-container {
-    container-type: inline-size;
-  }
-  
-  /* @scope ensures styles are scoped to the component */
+  /* @scope ensures styles are encapsulated to the component */
   @scope (.card-container) {
+    /* container-type sets the type of @container context */
+    container-type: inline-size;
+
     .card {
       background-color: var(--surface-primary);
       border: 1px solid var(--border-primary);
@@ -18,7 +17,7 @@
       text-align: center;
       gap: 1rem;
       
-      /* nesting */
+      /* nesting selectors with sass-like syntax */
       & .card-title {
         margin-top: 0;
         margin-bottom: 1rem;
@@ -29,7 +28,7 @@
       }
     }
 
-    /* adapt based on available space */
+    /* adapt based on available space defined in the container-type */
     @container (min-width: 768px) {
       .card {
         border-radius: 1rem;
