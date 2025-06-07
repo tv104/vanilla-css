@@ -1,0 +1,47 @@
+@property --progress {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+@layer components {  
+    @scope (.progress) {
+        background-color: var(--surface-muted);
+        container-type: inline-size;
+        
+        .progress-bar {
+            color: var(--content-inverse);
+            text-align: center;
+
+            height: 20px;
+            @container (min-width: 600px) {
+                height: 40px;
+            }
+          
+            background-color: var(--action-primary);
+            &.success {
+                background-color: green;
+            }
+
+            width: var(--progress);
+            transition: --progress 0.3s ease-in-out, 
+              background-color 0.3s ease-in-out;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Stylelint does not recognize @property yet: https://github.com/csstools/stylelint-value-no-unknown-custom-properties/issues/50 */
+@layer variables {
+    :scope {
+        --progress: 0%;
+    }
+}

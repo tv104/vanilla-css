@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import "./styles/index.css";
 import { Button } from "./components/button";
 import { Card } from "./components/card";
 import { ColorSwatch } from "./components/color-swatch";
+import { Progress } from "./components/progress";
 
+const steps = ["0%", "10%", "25%", "33%", "66%", "80%", "100%", "100%"];
 function App() {
   const [count, setCount] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useLayoutEffect(() => {
+    const interval = setInterval(() => {
+      const nextStep = (currentStep + 1) % steps.length;
+      const value = parseInt(steps[nextStep]);
+
+      setCurrentStep(nextStep);
+      setProgress(value);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [currentStep]);
 
   const blueColors = [
     "--blue-50",
@@ -35,6 +51,8 @@ function App() {
         <ColorSwatch title="Blue Primitives" colors={blueColors} />
         <ColorSwatch title="Neutral Primitives" colors={neutralColors} />
       </Card>
+
+      <Progress progress={progress} />
 
       <div>
         <Card title="Container Query Demo">
