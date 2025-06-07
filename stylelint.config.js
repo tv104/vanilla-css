@@ -6,7 +6,7 @@ export default {
   rules: {
     "csstools/value-no-unknown-custom-properties": [true, {
       "importFrom": [
-        "./src/styles/colors.css"
+        "./src/styles/index.css"
       ]
     }],
     "block-no-empty": true,
