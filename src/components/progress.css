@@ -1,7 +1,21 @@
+/* Stylelint does not recognize @property yet: https://github.com/csstools/stylelint-value-no-unknown-custom-properties/issues/50 */
+@layer variables {
+    :scope {
+        --progress: 0%;
+        --hue: 240deg;
+    }
+}
+
 @property --progress {
     syntax: "<percentage>";
     inherits: false;
     initial-value: 0%;
+}
+
+@property --hue {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
 }
 
 @layer components {  
@@ -10,38 +24,18 @@
         container-type: inline-size;
         
         .progress-bar {
-            color: var(--content-inverse);
-            text-align: center;
+            background: linear-gradient(90deg,
+                oklch(70% 0.4 var(--hue)),
+                oklch(70% 0.4 calc(var(--hue) + 40deg))
+            );
+            
+            width: var(--progress);
+            transition: --progress 0.3s ease, --hue 0.3s ease;
 
             height: 20px;
             @container (min-width: 600px) {
                 height: 40px;
             }
-          
-            background-color: var(--action-primary);
-            &.success {
-                background-color: green;
-            }
-
-            width: var(--progress);
-            transition: --progress 0.3s ease-in-out, 
-              background-color 0.3s ease-in-out;
         }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-/* Stylelint does not recognize @property yet: https://github.com/csstools/stylelint-value-no-unknown-custom-properties/issues/50 */
-@layer variables {
-    :scope {
-        --progress: 0%;
     }
 }

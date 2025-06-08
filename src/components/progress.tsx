@@ -5,16 +5,17 @@ interface ProgressProps {
 }
 
 export const Progress = ({ progress }: ProgressProps) => {
-  const isSuccess = progress === 100;
-
   return (
     <div className="progress">
       <div
-        className={`progress-bar ${isSuccess ? "success" : ""}`}
-        style={{ "--progress": `${progress}%` } as React.CSSProperties}
-      >
-        {progress}%
-      </div>
+        className="progress-bar"
+        style={
+          {
+            "--progress": `${progress}%`,
+            "--hue": `${(progress + 40) * 0.9}deg`,
+          } as React.CSSProperties
+        }
+      />
     </div>
   );
 };
