@@ -1,3 +1,9 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0turn;
+  inherits: false;
+}
+
 /* @layer ensures explicit cascade order relative to base/utility styles */
 @layer components {
   /* @scope ensures styles are encapsulated to the component */
@@ -6,9 +12,25 @@
     container-type: inline-size;
 
     .card {
-      background-color: var(--surface-primary);
-      border: 1px solid var(--border-primary);
-      border-radius: 0.5rem;
+      animation: 5s gradient-angle infinite linear;
+      &:hover {
+        animation-duration: 0.5s;
+      }
+      border: 8px solid transparent;
+      background-image: 
+        linear-gradient(var(--surface-primary), var(--surface-primary)),
+        conic-gradient(
+          from var(--gradient-angle),
+          #ff006e 0%,
+          #8338ec 20%,
+          #3a86ff 40%,
+          #06ffa5 60%,
+          #ffbe0b 80%,
+          #fb5607 100%
+        );
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      border-radius: 16px;
       padding: 1rem;
       box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
       display: flex;
@@ -31,7 +53,6 @@
     /* adapt based on available space defined in the container-type */
     @container (min-width: 768px) {
       .card {
-        border-radius: 1rem;
         padding: 2rem;
         gap: 2rem;
         text-align: left;
@@ -43,5 +64,11 @@
         }
       }
     }
+  }
+}
+
+@keyframes gradient-angle {
+  to {
+    --gradient-angle: 1turn;
   }
 }
