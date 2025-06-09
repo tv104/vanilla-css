@@ -11,8 +11,7 @@ export const Progress = ({ progress }: ProgressProps) => {
         className="progress-bar"
         style={
           {
-            "--progress": `${progress}%`,
-            "--hue": `${(progress + 40) * 0.9}deg`,
+            "--progress": progress,
           } as React.CSSProperties
         }
       />
